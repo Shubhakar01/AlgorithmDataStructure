@@ -1,3 +1,5 @@
+# Edge cases to remember, incase list is empty and adding at end of list or deleting from list
+
 class Node:
     def __init__(self, data):
         self.data = data
