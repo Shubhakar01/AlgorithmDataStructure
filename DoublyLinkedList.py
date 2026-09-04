@@ -6,15 +6,13 @@ class Node:
 
 
 class DoublyLinkedList:
-    """Represents the doubly linked list."""
     def __init__(self):
         self.head = None
         self.tail = None
 
     def insert_front(self, data):
-        """Inserts a new node at the beginning of the list."""
         new_node = Node(data)
-        if not self.head:  # If list is empty
+        if not self.head: 
             self.head = self.tail = new_node
         else:
             new_node.next = self.head
@@ -23,9 +21,8 @@ class DoublyLinkedList:
         print(f"Inserted {data} at the front.")
 
     def insert_end(self, data):
-        """Inserts a new node at the end of the list."""
         new_node = Node(data)
-        if not self.tail:  # If list is empty
+        if not self.tail:
             self.head = self.tail = new_node
         else:
             new_node.prev = self.tail
@@ -40,7 +37,7 @@ class DoublyLinkedList:
             return
 
         deleted_data = self.head.data
-        if self.head == self.tail:  # If there's only one node
+        if self.head == self.tail: 
             self.head = self.tail = None
         else:
             self.head = self.head.next
@@ -54,7 +51,7 @@ class DoublyLinkedList:
             return
 
         deleted_data = self.tail.data
-        if self.head == self.tail:  # If there's only one node
+        if self.head == self.tail:
             self.head = self.tail = None
         else:
             self.tail = self.tail.prev
@@ -76,21 +73,20 @@ class DoublyLinkedList:
         print(" <-> ".join(elements) + " <-> None")
 
 
-# --- Example Usage ---
 if __name__ == "__main__":
     dll = DoublyLinkedList()
 
     print("--- Testing Insertions ---")
-    dll.insert_end(10)    # 10
-    dll.insert_end(20)    # 10 <-> 20
-    dll.insert_front(5)   # 5 <-> 10 <-> 20
+    dll.insert_end(10)
+    dll.insert_end(20)
+    dll.insert_front(5)
 
     print("\nCurrent List:")
     dll.display()
 
     print("\n--- Testing Deletions ---")
-    dll.delete_front()    # Removes 5
-    dll.delete_end()      # Removes 20
+    dll.delete_front() 
+    dll.delete_end() 
 
     print("\nCurrent List:")
     dll.display()

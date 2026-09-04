@@ -48,14 +48,12 @@ class LinkedList:
             print("List is empty! Nothing to delete from the end.")
             return
         
-        # If there is only one node in the list
         if not self.head.next:
             deleted_data = self.head.data
             self.head = None
             print(f"Deleted {deleted_data} from the end.")
             return
         
-        # Traverse to the second last node
         current = self.head
         while current.next.next:
             current = current.next
